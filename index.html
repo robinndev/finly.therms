@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0A0A0B" />
+<meta name="description" content="Termos de Uso e Política de Privacidade do Finly — organização financeira pessoal e compartilhada." />
+<meta property="og:title" content="Finly — Termos e Privacidade" />
+<meta property="og:description" content="Como o Finly cuida dos seus dados." />
+<meta property="og:type" content="website" />
+<title>Finly — Termos e Privacidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08080A;
+    --bg-elev: #0F0F12;
+    --surface: #141418;
+    --surface-alt: #1A1A20;
+    --border: #24242B;
+    --border-strong: #34343E;
+    --text: #F7F7FA;
+    --text-secondary: #B5B5BF;
+    --text-tertiary: #6E6E78;
+    --accent: #8B6BFF;
+    --accent-glow: rgba(139, 107, 255, 0.15);
+    --success: #4ADE80;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-pill: 999px;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Ambient background glow */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+
+  /* Hero */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 0 40px;
+  }
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px 8px 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.01em;
+  }
+  .brand-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--accent) 0%, #5B3EE0 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px var(--accent-glow);
+  }
+  .brand-logo svg { width: 14px; height: 14px; }
+  h1.title {
+    font-size: 44px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
+    background: linear-gradient(180deg, #FFFFFF 0%, #B5B5BF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    color: var(--text-tertiary);
+    font-size: 15px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+    display: inline-block;
+  }
+
+  /* Sticky nav */
+  .nav {
+    position: sticky;
+    top: 12px;
+    z-index: 20;
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    margin: 0 0 40px;
+    background: rgba(15, 15, 18, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    width: fit-content;
+  }
+  .nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: var(--radius-pill);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.15s, background 0.15s;
+  }
+  .nav a:hover { color: var(--text); }
+  .nav a.active {
+    background: var(--surface-alt);
+    color: var(--text);
+    box-shadow: inset 0 0 0 1px var(--border-strong);
+  }
+  .nav a svg { width: 14px; height: 14px; opacity: 0.7; }
+
+  /* Sections */
+  section {
+    scroll-margin-top: 80px;
+    margin: 0 0 32px;
+    padding: 32px;
+    background: linear-gradient(180deg, var(--surface) 0%, var(--bg-elev) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .section-icon svg { width: 20px; height: 20px; }
+  .section-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 28px 0 10px;
+    color: var(--text);
+    letter-spacing: -0.005em;
+  }
+  h3:first-of-type { margin-top: 0; }
+  p {
+    margin: 0 0 12px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  p:last-child { margin-bottom: 0; }
+  p a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  p a:hover { text-decoration: underline; }
+
+  /* Footer */
+  footer {
+    margin-top: 64px;
+    padding: 32px;
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  footer .contact-label {
+    color: var(--text-tertiary);
+    font-size: 13px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  footer .contact-email {
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  footer .contact-email:hover { color: var(--accent); }
+  footer .copyright {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-tertiary);
+    font-size: 12px;
+  }
+  footer .copyright strong { color: var(--text-secondary); font-weight: 700; }
+
+  /* Back to top */
+  .to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 30;
+    backdrop-filter: blur(10px);
+  }
+  .to-top.visible { opacity: 1; transform: translateY(0); }
+  .to-top:hover { color: var(--text); border-color: var(--accent); }
+  .to-top svg { width: 18px; height: 18px; }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 32px 16px 80px; }
+    h1.title { font-size: 34px; }
+    section { padding: 24px 20px; }
+    .section-title { font-size: 20px; }
+    .nav { top: 8px; }
+    .nav a { padding: 9px 14px; font-size: 13px; }
+    footer { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="brand">
+      <span class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 7h16M4 12h10M4 17h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Finly
+    </span>
+    <h1 class="title">Termos e Privacidade</h1>
+    <p class="subtitle">
+      Documento oficial
+      <span class="dot"></span>
+      Atualizado em 7 de agosto de 2026
+    </p>
+  </header>
+
+  <nav class="nav" id="nav">
+    <a href="#terms" data-target="terms" class="active">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M9 12h6m-6 4h4m-8 5h12a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Termos de Uso
+    </a>
+    <a href="#privacy" data-target="privacy">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Privacidade
+    </a>
+  </nav>
+
+  <section id="terms">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 12h6m-6 4h4m-8 5h12a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h2 class="section-title">Termos de Uso</h2>
+    </div>
+
+    <h3>O que é o Finly</h3>
+    <p>O Finly é um aplicativo de organização financeira pessoal e compartilhada. Ele ajuda você a registrar receitas, despesas, cartões, faturas, metas e assinaturas, e a importar extratos e faturas dos seus bancos.</p>
+    <p>O Finly não é uma instituição financeira. Ele não movimenta dinheiro, não realiza pagamentos e não tem acesso às suas contas bancárias.</p>
+
+    <h3>Sua conta</h3>
+    <p>Para usar o app você precisa criar uma conta com e-mail, Google ou Apple. Você é responsável por manter suas credenciais em segurança e por tudo que for feito na sua conta.</p>
+    <p>Você pode excluir sua conta a qualquer momento em Perfil, na opção "Excluir minha conta". A exclusão é permanente.</p>
+
+    <h3>Compartilhamento com outra pessoa</h3>
+    <p>Ao aceitar um convite de parceria, você passa a compartilhar seus lançamentos, contas, cartões e metas com a pessoa conectada, e ela compartilha os dela com você.</p>
+    <p>Enquanto a conexão existir, essa pessoa consegue ver e editar os dados compartilhados. Você pode desfazer a conexão quando quiser, na tela de Parceiros.</p>
+
+    <h3>Importação de extratos</h3>
+    <p>Ao importar um extrato ou fatura, o arquivo é enviado aos nossos servidores e processado por um serviço de inteligência artificial para extrair as transações.</p>
+    <p>A extração é automática e pode conter erros. Confira sempre os valores na tela de revisão antes de confirmar a importação. Os números apresentados no app não substituem os extratos oficiais do seu banco.</p>
+
+    <h3>Uso correto</h3>
+    <p>Você concorda em não usar o Finly para atividades ilegais, não tentar acessar dados de outros usuários e não sobrecarregar nossos serviços de forma automatizada.</p>
+    <p>Podemos suspender contas que descumpram estas regras.</p>
+
+    <h3>Limitação de responsabilidade</h3>
+    <p>O Finly é oferecido no estado em que se encontra. As informações exibidas são organizadas a partir do que você registra ou importa, e servem como apoio à sua organização financeira.</p>
+    <p>Decisões financeiras tomadas com base no app são de sua responsabilidade.</p>
+
+    <h3>Mudanças nestes termos</h3>
+    <p>Podemos atualizar estes termos. Mudanças relevantes serão avisadas dentro do app. Continuar usando o Finly após uma atualização significa que você concorda com a nova versão.</p>
+  </section>
+
+  <section id="privacy">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </div>
+      <h2 class="section-title">Política de Privacidade</h2>
+    </div>
+
+    <h3>Quais dados coletamos</h3>
+    <p>Dados de cadastro: nome, e-mail, nome de usuário e foto de perfil, quando você fornece.</p>
+    <p>Dados financeiros que você registra: lançamentos, contas, cartões, faturas, metas e assinaturas.</p>
+    <p>Arquivos de extrato que você escolhe importar.</p>
+    <p>Dados técnicos: identificador do dispositivo para envio de notificações.</p>
+
+    <h3>Como usamos</h3>
+    <p>Usamos seus dados exclusivamente para operar o aplicativo: exibir seus saldos e relatórios, processar as importações, enviar notificações que você autorizou e sincronizar entre seus dispositivos e com a pessoa conectada a você.</p>
+    <p>Não vendemos seus dados. Não usamos seus dados financeiros para publicidade.</p>
+
+    <h3>Onde ficam armazenados</h3>
+    <p>Seus dados ficam no Firebase (Google Cloud), com acesso restrito por regras de segurança: cada usuário só acessa os próprios dados e os de quem estiver conectado a ele.</p>
+    <p>Os arquivos de extrato ficam numa área privada, acessível apenas por você.</p>
+
+    <h3>Inteligência artificial</h3>
+    <p>Ao importar um extrato, o conteúdo do arquivo é enviado a um provedor de IA (OpenAI) para que as transações sejam extraídas.</p>
+    <p>Esse envio ocorre apenas no momento da importação e serve só para essa finalidade.</p>
+
+    <h3>Compartilhamento com terceiros</h3>
+    <p>Compartilhamos dados apenas com os serviços necessários para o app funcionar: Google Firebase (autenticação, banco de dados, arquivos e notificações), OpenAI (extração de extratos) e Expo (entrega de notificações).</p>
+    <p>Não compartilhamos seus dados com anunciantes.</p>
+
+    <h3>Seus direitos</h3>
+    <p>Você pode acessar e corrigir seus dados a qualquer momento dentro do app.</p>
+    <p>Você pode excluir sua conta e todos os dados associados em Perfil, na opção "Excluir minha conta". A exclusão é imediata e permanente.</p>
+    <p>Para dúvidas sobre seus dados, entre em contato pelo e-mail abaixo.</p>
+
+    <h3>Contato</h3>
+    <p>Dúvidas sobre privacidade podem ser enviadas para <a href="mailto:robsondev21@gmail.com">robsondev21@gmail.com</a>.</p>
+  </section>
+
+  <footer>
+    <p class="contact-label">Fale com a gente</p>
+    <a class="contact-email" href="mailto:robsondev21@gmail.com">robsondev21@gmail.com</a>
+    <div class="copyright">
+      &copy; 2026 <strong>Finly</strong> · Feito com cuidado para você organizar sua vida financeira
+    </div>
+  </footer>
+</div>
+
+<a href="#" class="to-top" id="toTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M5 15l7-7 7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
+
+<script>
+  const links = document.querySelectorAll('.nav a');
+  const sections = document.querySelectorAll('section');
+  const toTop = document.getElementById('toTop');
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        links.forEach((l) => l.classList.toggle('active', l.dataset.target === id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach((s) => io.observe(s));
+
+  window.addEventListener('scroll', () => {
+    toTop.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+</body>
+</html>
