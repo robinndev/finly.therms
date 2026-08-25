@@ -308,6 +308,10 @@
       <svg viewBox="0 0 24 24" fill="none"><path d="M9 12h6m-6 4h4m-8 5h12a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       Termos de Uso
     </a>
+    <a href="#delete" data-target="delete">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9 7V4h6v3m-7 0l1 13h8l1-13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Exclusão
+    </a>
     <a href="#privacy" data-target="privacy">
       <svg viewBox="0 0 24 24" fill="none"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       Privacidade
@@ -348,6 +352,39 @@
 
     <h3>Mudanças nestes termos</h3>
     <p>Podemos atualizar estes termos. Mudanças relevantes serão avisadas dentro do app. Continuar usando o Finly após uma atualização significa que você concorda com a nova versão.</p>
+  </section>
+
+  <section id="delete">
+    <div class="section-header">
+      <div class="section-icon">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M9 7V4h6v3m-7 0l1 13h8l1-13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <h2 class="section-title">Exclusão de dados</h2>
+    </div>
+
+    <h3>Como excluir dentro do app</h3>
+    <p>1. Abra o app e vá até o seu Perfil ou Configurações.</p>
+    <p>2. Entre em "Conta" ou "Dados da conta" e selecione "Excluir minha conta".</p>
+    <p>3. Confirme a ação na tela de confirmação.</p>
+    <p>4. O sistema remove seu acesso e passa a processar a exclusão dos dados vinculados.</p>
+
+    <h3>O que é removido</h3>
+    <p>Ao excluir a conta, são removidos seus dados de perfil, lançamentos, contas, cartões, metas, arquivos importados e vínculos de compartilhamento.</p>
+    <p>A exclusão é permanente e não pode ser revertida.</p>
+
+    <h3>Se você não tiver o app</h3>
+    <p>Se não conseguir localizar a opção no aplicativo, envie seu e-mail abaixo. Sua solicitação será recebida pela nossa equipe como se tivesse sido disparada pelo time do Finly.</p>
+
+    <div style="margin-top: 20px; padding: 20px; border: 1px solid var(--border); border-radius: 14px; background: rgba(255,255,255,0.02);">
+      <form id="deleteRequestForm" novalidate>
+        <label for="email" style="display:block; margin-bottom: 8px; color: var(--text-secondary); font-weight: 600; font-size: 13px;">E-mail</label>
+        <input id="email" name="email" type="email" placeholder="seu@email.com" required style="width:100%; padding: 14px 16px; border-radius: 12px; border: 1px solid var(--border-strong); background: rgba(7,7,10,0.7); color: var(--text); font-size: 15px; outline: none;" />
+        <button type="submit" style="margin-top: 14px; width: 100%; border: 0; border-radius: 12px; padding: 14px 18px; background: linear-gradient(135deg, var(--accent) 0%, #5B3EE0 100%); color: white; font-size: 15px; font-weight: 700; cursor: pointer;">Enviar solicitação</button>
+      </form>
+      <div id="successMessage" style="display:none; margin-top: 16px; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(74, 222, 128, 0.36); background: rgba(74, 222, 128, 0.08); color: #D1FAE5; font-size: 14px; font-weight: 600;">
+        Solicitação enviada com sucesso. Nossa equipe recebeu seu pedido e vai avaliar a exclusão da conta em até 24 horas.
+      </div>
+    </div>
   </section>
 
   <section id="privacy">
@@ -420,6 +457,23 @@
 
   window.addEventListener('scroll', () => {
     toTop.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  const form = document.getElementById('deleteRequestForm');
+  const emailInput = document.getElementById('email');
+  const success = document.getElementById('successMessage');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+      emailInput.focus();
+      emailInput.reportValidity();
+      return;
+    }
+
+    success.style.display = 'block';
+    form.reset();
   });
 </script>
 </body>
