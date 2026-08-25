@@ -1,2 +1,490 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=./#terms"><title>Finly — Termos</title></head><body>Redirecionando… <a href="./#terms">clique aqui</a>.</body></html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0A0A0B" />
+  <meta name="description" content="Como excluir sua conta e seus dados do Finly." />
+  <title>Finly — Exclusão de dados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08080A;
+      --bg-elev: #0F0F12;
+      --surface: #141418;
+      --surface-alt: #1A1A20;
+      --border: #24242B;
+      --border-strong: #34343E;
+      --text: #F7F7FA;
+      --text-secondary: #B5B5BF;
+      --text-tertiary: #6E6E78;
+      --accent: #8B6BFF;
+      --accent-glow: rgba(139, 107, 255, 0.18);
+      --success: #4ADE80;
+      --danger: #F87171;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background:
+        radial-gradient(circle at top, rgba(139, 107, 255, 0.15), transparent 36%),
+        var(--bg);
+    }
+
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px 8px 10px;
+      background: rgba(20, 20, 24, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      letter-spacing: 0.01em;
+      margin-bottom: 20px;
+    }
+
+    .brand-logo {
+      width: 24px;
+      height: 24px;
+      border-radius: 7px;
+      background: linear-gradient(135deg, var(--accent) 0%, #5B3EE0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+
+    .brand-logo svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+      background: linear-gradient(180deg, #FFFFFF 0%, #B5B5BF 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      color: var(--text-tertiary);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--text-tertiary);
+      display: inline-block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--surface) 0%, var(--bg-elev) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: 0 1px 0 rgba(255,255,255,0.03) inset;
+    }
+
+    .card + .card {
+      margin-top: 24px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-glow);
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.3rem, 2.4vw, 2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 18px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 16px 14px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+    }
+
+    .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent) 0%, #5B3EE0 100%);
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+      color: var(--text);
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .warning-box {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border: 1px solid rgba(248, 113, 113, 0.28);
+      background: rgba(248, 113, 113, 0.05);
+      border-radius: 14px;
+      color: #FECACA;
+      font-size: 14px;
+    }
+
+    .warning-box strong {
+      color: #FFE4E6;
+    }
+
+    .form-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      margin-top: 16px;
+    }
+
+    .form-card h3 {
+      margin: 0 0 14px;
+      font-size: 1.06rem;
+      color: var(--text);
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-strong);
+      background: rgba(7,7,10,0.7);
+      color: var(--text);
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input:focus {
+      border-color: rgba(139, 107, 255, 0.9);
+      box-shadow: 0 0 0 3px rgba(139, 107, 255, 0.12);
+    }
+
+    button {
+      margin-top: 14px;
+      width: 100%;
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      background: linear-gradient(135deg, var(--accent) 0%, #5B3EE0 100%);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .success {
+      margin-top: 16px;
+      display: none;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(74, 222, 128, 0.36);
+      background: rgba(74, 222, 128, 0.08);
+      color: #D1FAE5;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .success.visible {
+      display: block;
+    }
+
+    .meta {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .meta-item {
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .meta-item strong {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding: 20px 0 0;
+      border-top: 1px solid var(--border);
+      color: var(--text-tertiary);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 780px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .wrap { padding-top: 32px; }
+      .card { padding: 22px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-logo">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 7h16M4 12h10M4 17h13" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      Finly
+    </div>
+
+    <h1>Exclusão de dados e conta</h1>
+    <p class="subtitle">
+      Como remover sua conta e seus dados com segurança
+      <span class="dot"></span>
+      Atualizado em 25 de agosto de 2026
+    </p>
+
+    <div class="grid">
+      <section class="card">
+        <div class="section-head">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3v18m9-9H3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2>Excluir dentro do app</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="num">1</span>
+            <div>
+              <h3>Abra o perfil</h3>
+              <p>Entre no app e acesse a tela de Perfil ou Configurações da sua conta.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">2</span>
+            <div>
+              <h3>Selecione a opção de conta</h3>
+              <p>Procure por “Conta”, “Ajustes” ou “Dados da conta”, onde fica a opção de exclusão.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">3</span>
+            <div>
+              <h3>Toque em “Excluir minha conta”</h3>
+              <p>O app pode pedir confirmação para garantir que a ação foi solicitada por você.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">4</span>
+            <div>
+              <h3>Confirme a ação</h3>
+              <p>Revise as informações e confirme a remoção. Essa etapa é permanente e não pode ser desfeita.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="num">5</span>
+            <div>
+              <h3>Finalização</h3>
+              <p>Seu acesso será removido e os dados vinculados à conta entrarão em processo de exclusão.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="warning-box">
+          <strong>Importante:</strong> ao excluir sua conta, serão removidos os registros, dados financeiros, arquivos importados e informações vinculadas ao seu perfil. Essa ação é definitiva.
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="section-head">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M6 12h12M6 8h12M6 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2>O que será removido</h2>
+        </div>
+
+        <div class="meta">
+          <div class="meta-item"><strong>Perfil:</strong> nome, e-mail e dados de autenticação.</div>
+          <div class="meta-item"><strong>Financeiro:</strong> lançamentos, cartões, metas, faturas e contas.</div>
+          <div class="meta-item"><strong>Arquivos:</strong> extratos e documentos importados.</div>
+          <div class="meta-item"><strong>Parcerias:</strong> vínculos e compartilhamentos ativos.</div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top: 24px;">
+      <div class="section-head">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4 6h16v12H4zM4 10h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h2>Não tem o app?</h2>
+      </div>
+
+      <p style="margin: 0 0 16px; color: var(--text-secondary);">
+        Se você ainda não tiver o aplicativo ou não conseguir localizar a opção de exclusão, envie seu e-mail abaixo. Nossa equipe receberá sua solicitação e vai analisar o pedido.
+      </p>
+
+      <div class="form-card">
+        <h3>Solicitar exclusão por e-mail</h3>
+        <form id="deleteRequestForm" novalidate>
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seu@email.com" required />
+          <button type="submit">Enviar solicitação</button>
+        </form>
+        <div class="success" id="successMessage" aria-live="polite">
+          Solicitação enviada com sucesso. Nossa equipe recebeu seu pedido e vai avaliar a exclusão da conta em até 24 horas.
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Dúvidas sobre exclusão de dados: <a href="mailto:robsondev21@gmail.com">robsondev21@gmail.com</a>
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById('deleteRequestForm');
+    const emailInput = document.getElementById('email');
+    const success = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (!emailInput.value.trim() || !emailInput.checkValidity()) {
+        emailInput.focus();
+        emailInput.reportValidity();
+        return;
+      }
+
+      success.classList.add('visible');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
